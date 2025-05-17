@@ -1,8 +1,0 @@
-fca\suayed\resources\HelloResource.class
-fca\suayed\dal\StoreDal.class
-fca\suayed\services\JdbiService.class
-fca\suayed\dto\ResponseDto.class
-fca\suayed\dto\ProductDto.class
-fca\suayed\dao\StoreDao.class
-fca\suayed\resources\ProductsResource.class
-fca\suayed\application\ApiApplication.class
