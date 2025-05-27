@@ -12,7 +12,7 @@ import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponses;
 
 @Path("/clients")
-public class ClientsResource {  // <-- ¡Corrige la mayúscula inicial aquí!
+public class ClientsResource {
 
     @Inject
     StoreDal storeDal;
@@ -22,10 +22,10 @@ public class ClientsResource {  // <-- ¡Corrige la mayúscula inicial aquí!
     @Produces(MediaType.APPLICATION_JSON)
     @Operation(summary = "Get all clients")
     @APIResponses(value = {
-            @APIResponse(responseCode = "200", content = @Content(mediaType = MediaType.APPLICATION_JSON)),
+        @APIResponse(responseCode = "200", content = @Content(mediaType = MediaType.APPLICATION_JSON)),
     })
     public Response getClients() {
-        var responseDto = storeDal.getClients();  // <-- método debe ser getClients() (mayúscula C)
+        var responseDto = storeDal.getClients();
         return Response.ok(responseDto).build();
     }
 
@@ -35,10 +35,11 @@ public class ClientsResource {  // <-- ¡Corrige la mayúscula inicial aquí!
     @Produces(MediaType.APPLICATION_JSON)
     @Operation(summary = "Add a new client")
     @APIResponses(value = {
-            @APIResponse(responseCode = "200", content = @Content(mediaType = MediaType.APPLICATION_JSON)),
+        @APIResponse(responseCode = "200", content = @Content(mediaType = MediaType.APPLICATION_JSON)),
     })
-    public Response registerUser(ClientDto clientDto) {  // <-- ¡Corrige el nombre del parámetro y tipo!
-        storeDal.addClient(clientDto);  // <-- aquí solo insertas; no necesitas retornar nada complejo
+    public Response addClient(ClientDto clientDto) {
+        storeDal.addClient(clientDto);
         return Response.ok().build();
     }
+
 }
