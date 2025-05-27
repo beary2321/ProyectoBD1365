@@ -23,7 +23,7 @@ public interface StoreDao {
     @SqlQuery("SELECT * FROM clientes")
     List<ClientDto> getClients();
 
-    @SqlUpdate("INSERT INTO clientes (nombre, apellido_paterno, apellido_materno, rfc) VALUES(:p.name, :p.paternal_surname, :p.maternal_surname, :p.rfc)")
+    @SqlUpdate("INSERT INTO clientes (nombre, apellido_paterno, apellido_materno, rfc) VALUES(:p.nombre, :p.apellidoPaterno, :p.apellidoMaterno, :p.rfc)")
     void addClient(@BindBean("p") ClientDto clientDto);
 
 
