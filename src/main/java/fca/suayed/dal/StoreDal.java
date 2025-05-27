@@ -46,7 +46,7 @@ public class StoreDal {
         return responseDto;
     }
 
-    public ResponseDto<List<ProductDto>> getClients() {
+    public ResponseDto<List<ClientDto>> getClients() {
 
         ResponseDto responseDto = new ResponseDto<List<ClientDto>>();
         responseDto.setSuccess(true);
