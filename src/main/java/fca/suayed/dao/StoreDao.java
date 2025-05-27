@@ -15,8 +15,9 @@ public interface StoreDao {
     @SqlQuery("SELECT * FROM productos")
     List<ProductDto> getProducts();
 
-    @SqlUpdate("INSERT INTO productos (nombre, descripcion, precio, cantidad, sku) VALUES(:name, :description, :price, :quantity, :sku)")
-    void addProduct(@BindBean ProductDto productDto);
+    @SqlUpdate("INSERT INTO productos (nombre, descripcion, precio, cantidad, sku) VALUES(:p.name, :p.description, :p.price, :p.quantity, :p.sku)")
+    void addProduct(@BindBean("p") ProductDto productDto);
+
 
 
 
