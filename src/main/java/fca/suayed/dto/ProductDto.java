@@ -8,6 +8,7 @@ public class ProductDto {
     private String description;
     private Double price;
     private Integer quantity;
+    private String sku;
 
     public Long getId() {
         return id;
@@ -53,6 +54,7 @@ public class ProductDto {
         this.quantity = quantity;
     }
 
+    @ColumnName("sku")
     public String getSku() {
         return sku;
     }
@@ -60,7 +62,4 @@ public class ProductDto {
     public void setSku(String sku) {
         this.sku = sku;
     }
-
-    private String sku;
-
 }
