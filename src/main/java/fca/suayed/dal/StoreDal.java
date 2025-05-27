@@ -2,6 +2,7 @@ package fca.suayed.dal;
 
 import fca.suayed.dao.StoreDao;
 import fca.suayed.dto.ProductDto;
+import fca.suayed.dto.ClientDto;
 import fca.suayed.dto.ResponseDto;
 import fca.suayed.services.JdbiService;
 import jakarta.enterprise.context.ApplicationScoped;
@@ -44,5 +45,33 @@ public class StoreDal {
 
         return responseDto;
     }
+
+    public ResponseDto<List<ProductDto>> getClients() {
+
+        ResponseDto responseDto = new ResponseDto<List<ClientDto>>();
+        responseDto.setSuccess(true);
+        Jdbi jdbi = jdbiService.getInstance();
+        var products = jdbi.withExtension(StoreDao.class, dao -> dao.getClients());
+        responseDto.setData(clients);
+        return responseDto;
+    }
+
+    public ResponseDto<String> addClient(final ClientDto clientDto) {
+
+        ResponseDto responseDto = new ResponseDto<String>();
+        responseDto.setSuccess(false);
+
+        Jdbi jdbi = jdbiService.getInstance();
+        jdbi.useExtension(StoreDao.class, dao -> {
+            dao.addClient(clientDto);
+            responseDto.setSuccess(true);
+            responseDto.setData("ok");
+        });
+
+        return responseDto;
+    }
+
+
+    
 
 }
