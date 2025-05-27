@@ -1,9 +1,7 @@
 package fca.suayed.dto;
 
-import org.jdbi.v3.core.mapper.reflect.ColumnName;
-
 public class ClientDto {
-    private Long id;  // aunque no se use para insertar, sí para leer
+    private Long id;
     private String nombre;
     private String apellidoPaterno;
     private String apellidoMaterno;
@@ -17,7 +15,6 @@ public class ClientDto {
         this.id = id;
     }
 
-    @ColumnName("nombre")
     public String getNombre() {
         return nombre;
     }
@@ -26,7 +23,6 @@ public class ClientDto {
         this.nombre = nombre;
     }
 
-    @ColumnName("apellido_paterno")
     public String getApellidoPaterno() {
         return apellidoPaterno;
     }
@@ -35,7 +31,6 @@ public class ClientDto {
         this.apellidoPaterno = apellidoPaterno;
     }
 
-    @ColumnName("apellido_materno")
     public String getApellidoMaterno() {
         return apellidoMaterno;
     }
@@ -44,7 +39,6 @@ public class ClientDto {
         this.apellidoMaterno = apellidoMaterno;
     }
 
-    @ColumnName("rfc")
     public String getRfc() {
         return rfc;
     }
