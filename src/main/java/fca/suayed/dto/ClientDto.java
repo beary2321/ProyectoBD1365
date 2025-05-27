@@ -1,45 +1,55 @@
-  package fca.suayed.dto;
-  
-  import org.jdbi.v3.core.mapper.reflect.ColumnName;
-  
-  public class ClientDto {
-      private Long id;
-      private String name;
-      private String email;
-      private String phone;
-  
-      public Long getId() {
-          return id;
-      }
-  
-      public void setId(Long id) {
-          this.id = id;
-      }
-  
-      @ColumnName("nombre")
-      public String getName() {
-          return name;
-      }
-  
-      public void setName(String name) {
-          this.name = name;
-      }
-  
-      @ColumnName("correo")
-      public String getEmail() {
-          return email;
-      }
-  
-      public void setEmail(String email) {
-          this.email = email;
-      }
-  
-      @ColumnName("telefono")
-      public String getPhone() {
-          return phone;
-      }
-  
-      public void setPhone(String phone) {
-          this.phone = phone;
-      }
-  }
+package fca.suayed.dto;
+
+import org.jdbi.v3.core.mapper.reflect.ColumnName;
+
+public class ClientDto {
+    private Long id;  // aunque no se use para insertar, sí para leer
+    private String nombre;
+    private String apellidoPaterno;
+    private String apellidoMaterno;
+    private String rfc;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    @ColumnName("nombre")
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    @ColumnName("apellido_paterno")
+    public String getApellidoPaterno() {
+        return apellidoPaterno;
+    }
+
+    public void setApellidoPaterno(String apellidoPaterno) {
+        this.apellidoPaterno = apellidoPaterno;
+    }
+
+    @ColumnName("apellido_materno")
+    public String getApellidoMaterno() {
+        return apellidoMaterno;
+    }
+
+    public void setApellidoMaterno(String apellidoMaterno) {
+        this.apellidoMaterno = apellidoMaterno;
+    }
+
+    @ColumnName("rfc")
+    public String getRfc() {
+        return rfc;
+    }
+
+    public void setRfc(String rfc) {
+        this.rfc = rfc;
+    }
+}
